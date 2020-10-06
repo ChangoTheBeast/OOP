@@ -14,7 +14,11 @@ public abstract class Vehicle {
     }
 
     public void setNumberOfWheels(int numberOfWheels) {
-        this.numberOfWheels = numberOfWheels;
+        if (numberOfWheels < 0) {
+            System.err.println("Please provide a valid number of wheels.");
+        } else {
+            this.numberOfWheels = numberOfWheels;
+        }
     }
 
     public String getModel() {

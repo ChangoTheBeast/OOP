@@ -1,6 +1,6 @@
 package com.spartaglobal.reece;
 
-public class Plane extends Vehicle{
+public class Plane extends Vehicle {
     public Plane(int numberOfWheels, String model) {
         super(numberOfWheels, model);
     }
