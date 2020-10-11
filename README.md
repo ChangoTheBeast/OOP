@@ -104,3 +104,54 @@ public class Plane extends Vehicle {
     }
 }
  ```
+In this example, the method ```flyable``` has been **Overwridden** twice. Once by the ```Car``` class and once by the ```Plane``` class.
+
+## Inheritance
+Inheritance is the process of deriving one class from another class. This, when used appropriately can form a hierarchy of classes which helps the program to better model the real world. The keyword, "***extends***", is used to create this relationship. The class that is extended from is refered to as the ***superclass***, and the class that extends it is called the ***subclass***.
+
+### Example
+
+```java
+
+public abstract class Vehicle {
+    private int numberOfWheels;
+    private String model;
+
+    public Vehicle(int numberOfWheels, String model) {
+        this.numberOfWheels = numberOfWheels;
+        this.model = model;
+    }
+}
+
+public class Car extends Vehicle {
+    public Car(int numberOfWheels, String model) {
+        super(numberOfWheels, model);
+    }
+
+    @Override
+    public String flyable() {
+        return "Cars cannot fly.";
+    }
+}
+```
+In this example, the ```Vehicle``` class is the ***parent/super*** class, and the `Car` class is the ***child/sub*** class
+
+## Abstraction
+Abstraction is the process of hiding the internal implementation of your program from the user. This is done to promote redability since the user doesn't need to know how the method is implemented, they just need it to work.
+
+### Example
+
+```java
+public class Starter {
+    public void start() {
+        Printer printer = new Printer();
+        printer.print(car);
+    }
+}
+public class Printer {
+    public void print(Car car) {
+        System.out.println("This car is a " + car.getModel() + ".");
+    }
+}
+```
+In this example, the `Starter` class calls the print method with a `car` object. The user of this method didn't need to know how the ```print(Car car)``` method was implemented, just that it worked how it was intended.
